@@ -52,3 +52,20 @@ vector<task> Open_File() {
 	tasks.close();
 	return returner;
 }
+
+void Write_File(vector<task> tasks){
+	fstream save_file;
+	save_file.open("Resources\\tasks.tsk");
+	for (int i = 0; i < tasks.size(); i++) {
+		if (tasks.at(i).get_valid()) {
+			save_file << "START\n";
+			save_file << tasks.at(i).get_name() << "\n";
+			save_file << tasks.at(i).get_course() << "\n";
+			save_file << tasks.at(i).get_duedate() << "\n";
+			save_file << tasks.at(i).get_weight() << "\n";
+			save_file << tasks.at(i).get_diff() << "\n";
+			save_file << tasks.at(i).get_description() << "\n";
+			save_file << "END\n";
+		}
+	}
+}

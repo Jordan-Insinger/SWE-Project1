@@ -4,7 +4,7 @@
 #include <fstream>
 #include "task.h"
 #include "task_sorting.h"
-#include "ReadIn.h"
+#include "FileIO.h"
 
 using namespace std;
 
@@ -15,20 +15,7 @@ int main() {
 	}
 	task t1 = task("t1", "Chemistry", "10-30-2021", 1, 0);
 	tasks.push_back(t1);
-	fstream save_file;
-	save_file.open("Resources\\tasks.tsk");
-	for (int i = 0; i < tasks.size(); i++) {
-		if (tasks.at(i).get_valid()) {
-			save_file << "START\n";
-			save_file << tasks.at(i).get_name() << "\n";
-			save_file << tasks.at(i).get_course() << "\n";
-			save_file << tasks.at(i).get_duedate() << "\n";
-			save_file << tasks.at(i).get_weight() << "\n";
-			save_file << tasks.at(i).get_diff() << "\n";
-			save_file << tasks.at(i).get_description() << "\n";
-			save_file << "END\n";
-		}
-	}
+	Write_File(tasks);
 	return 1;
 }
 
