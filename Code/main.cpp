@@ -16,8 +16,7 @@ int main() {
 	task t1 = task("t1", "Chemistry", "10-30-2021", 1, 0);
 	tasks.push_back(t1);
 	fstream save_file;
-	save_file.open("tasks.tsk");
-	save_file << tasks.size() << "\n";
+	save_file.open("Resources\\tasks.tsk");
 	for (int i = 0; i < tasks.size(); i++) {
 		if (tasks.at(i).get_valid()) {
 			save_file << "START\n";
