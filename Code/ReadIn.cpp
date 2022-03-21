@@ -7,7 +7,7 @@
 using namespace std;
 
 vector<task> Open_File() {
-	ifstream tasks("tasks.tsk");
+	ifstream tasks("Resources\\tasks.tsk");
 	vector<task> returner;
 	if (!tasks.is_open()) {
 		cout << "Cannot open the tasks file!" << endl;
