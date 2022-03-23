@@ -74,7 +74,6 @@ void task::set_description(string _description) {
 }
 void task::add_Task(vector<task>& tasks, task added_task) {
 	tasks.push_back(added_task);
-	Write_File(tasks);
 }
 void task::delete_Task(vector<task>& tasks, task deleted_task) {
 	int i = 0;
@@ -84,5 +83,4 @@ void task::delete_Task(vector<task>& tasks, task deleted_task) {
 			break;
 		}
 	}
-	Write_File(tasks);
 }
