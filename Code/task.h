@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <vector>
+#include <fstream>
 using namespace std;
 
 class task
@@ -24,6 +26,9 @@ public:
 	string get_description();
 
 	/*------------------------------------------ Setters -----------------------------------------*/
+	void add_Task(vector<task>& tasks, task added_task);
+	void delete_Task(vector<task>& tasks, task deleted_task);
+	void update_File(vector<task>& tasks);
 	void set_valid(bool _valid);
 	void set_weight(int _weight);
 	void set_diff(int _diff);

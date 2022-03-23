@@ -1,8 +1,10 @@
 #include "task.h"
+#include "FileIO.h"
+#include <iostream>
 
 /*---------------------------------------- Constructor ---------------------------------------*/
-task::task(string _name, string _course, string _duedate, 
-	int _weight, int _diff,string _description, bool _valid) {
+task::task(string _name, string _course, string _duedate,
+	int _weight, int _diff, string _description, bool _valid) {
 	name = _name;
 	course = _course;
 	duedate = _duedate;
@@ -69,4 +71,16 @@ void task::set_name(string _name) {
 
 void task::set_description(string _description) {
 	description = _description;
+}
+void task::add_Task(vector<task>& tasks, task added_task) {
+	tasks.push_back(added_task);
+}
+void task::delete_Task(vector<task>& tasks, task deleted_task) {
+	int i = 0;
+	for (vector<task>::iterator it = tasks.begin(); it != tasks.end(); it++) {
+		if (it->get_name() == deleted_task.get_name()) {
+			tasks.erase(it);
+			break;
+		}
+	}
 }
