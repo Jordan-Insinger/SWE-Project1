@@ -2,13 +2,14 @@
 
 /*---------------------------------------- Constructor ---------------------------------------*/
 task::task(string _name, string _course, string _duedate, 
-	int _weight, int _diff,string _description, bool _valid) {
+	int _weight, int _diff,string _description, bool _completed, bool _valid) {
 	name = _name;
 	course = _course;
 	duedate = _duedate;
 	weight = _weight;
 	difficulty = _diff;
 	description = _description;
+	completed = _completed;
 	valid = _valid;
 }
 
@@ -16,6 +17,10 @@ task::task(string _name, string _course, string _duedate,
 
 bool task::get_valid() {
 	return valid;
+}
+
+bool task::get_completed() {
+	return completed;
 }
 
 int task::get_weight() {
@@ -47,6 +52,10 @@ void task::set_valid(bool _valid) {
 	valid = _valid;
 }
 
+void task::set_completed(bool _completed) {
+	completed = _completed;
+}
+
 void task::set_weight(int _weight) {
 	weight = _weight;
 }
@@ -69,4 +78,13 @@ void task::set_name(string _name) {
 
 void task::set_description(string _description) {
 	description = _description;
+}
+
+/*------------------------------------------  -----------------------------------------*/
+void task::print() {
+	cout << "Name: " << this->name << ", ";
+	cout << "Weight: " << this->weight << ", ";
+	cout << "Diff: " << this->difficulty << endl;
+	cout << "Course: " << this->course << endl;
+	cout << "Due date: " << this->duedate << endl;
 }
