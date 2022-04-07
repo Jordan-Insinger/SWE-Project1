@@ -7,7 +7,7 @@
 using namespace std;
 
 vector<task> Open_File() {
-	ifstream tasks("Resources\\tasks.tsk");
+	ifstream tasks("Resources/tasks.tsk");
 	vector<task> returner;
 	if (!tasks.is_open()) {
 		cout << "Cannot open the tasks file!" << endl;
@@ -55,7 +55,7 @@ vector<task> Open_File() {
 
 void Write_File(vector<task> tasks){
 	fstream save_file;
-	save_file.open("Resources\\tasks.tsk");
+	save_file.open("Resources/tasks.tsk");
 	for (int i = 0; i < tasks.size(); i++) {
 		if (tasks.at(i).get_valid()) {
 			save_file << "START\n";
