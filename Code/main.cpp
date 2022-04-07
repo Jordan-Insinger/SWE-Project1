@@ -10,11 +10,18 @@ using namespace std;
 
 int main() {
 	vector<task> tasks = Open_File();
+	task taskObj;
+
+	task t1 = task("t1", "Chemistry", "10-30-2021", 1, 0, "chem before hoes", true);
+	task t3 = task("t3", "Bio", "01-01-2000", 8, 2);
+	task t4 = task("t4", "Physics", "01-01-1400", 1, 3);
+
+	t1.add_Task(tasks, t3);
+	taskObj.delete_Task(tasks, t1);
+
 	for (int i = 0; i < tasks.size(); i++) {
 		cout << tasks.at(i).get_description() << endl;
 	}
-	task t1 = task("t1", "Chemistry", "10-30-2021", 1, 0);
-	tasks.push_back(t1);
 	Write_File(tasks);
 	return 1;
 }

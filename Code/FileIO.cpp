@@ -54,8 +54,8 @@ vector<task> Open_File() {
 }
 
 void Write_File(vector<task> tasks){
-	fstream save_file;
-	save_file.open("Resources/tasks.tsk");
+	std::ofstream save_file;
+	save_file.open("Resources/tasks.tsk", std::ofstream::out | std::ofstream::trunc);
 	for (int i = 0; i < tasks.size(); i++) {
 		if (tasks.at(i).get_valid()) {
 			save_file << "START\n";
